@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/* Fonts are injected by next/font as CSS variables on <html>; `inline`
+   makes utilities resolve them at use-time. */
+@theme inline {
+  --font-heading: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  /* Spec: mobile is <= 760px, so `md:` (desktop) starts at 761px. */
+  --breakpoint-md: 761px;
+
+  /* Brand palette */
+  --color-teal: #0f9488;
+  --color-teal-dark: #0b6f66;
+  --color-gold: #e0a930;
+  --color-leaf: #7fae3a;
+  --color-ink: #101826;
+  --color-navy: #0b1220;
+  --color-navy-card: #101d2b;
+  --color-navy-border: #223140;
+  --color-paper: #fbfbf9;
+  --color-line: #e7e5df;
+  --color-muted: #5b6472;
+
+  /* Pastel icon-chip backgrounds (rotate across repeating cards) */
+  --color-chip-mint: #e7f5ea;
+  --color-chip-teal: #e7f2f4;
+  --color-chip-gold: #fdf1de;
+  --color-chip-lilac: #f4e9f6;
+  --color-chip-pink: #fdeef0;
+
+  /* Layout: 1120px max content width -> `max-w-content` */
+  --container-content: 1120px;
+
+  /* Radius scale: chips 9px, cards/inputs 12px, pills 18px */
+  --radius-chip: 9px;
+  --radius-card: 12px;
+  --radius-pill: 18px;
+
+  /* Motion: page/section/card entrance (~0.45s ease).
+     `backwards` fill (not `both`) on purpose: once the entrance finishes the
+     element goes back to its normal styles, so the hover lift transform on
+     cards isn't overridden by a lingering animation fill. */
+  --animate-fade-slide-in: fadeSlideIn 0.45s ease backwards;
+
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper font-body text-base text-ink;
+    line-height: 1.5;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* ---- Cards: flat at rest, lift + shadow on hover ---- */
+  .card-flat {
+    @apply rounded-card border border-line bg-white;
+  }
+
+  .card-dark {
+    @apply rounded-card border border-navy-border bg-navy-card text-white;
+  }
+
+  .card-flat,
+  .card-dark,
+  .card-lift {
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .card-flat:hover,
+  .card-dark:hover,
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px -18px rgba(16, 24, 38, 0.2);
+  }
+
+  .card-dark:hover {
+    box-shadow: 0 16px 30px -18px rgba(0, 0, 0, 0.65);
+  }
+
+  /* ---- Icon chips scale up slightly when their card is hovered ---- */
+  .icon-chip {
+    transition: transform 0.2s ease;
+  }
+
+  .card-flat:hover .icon-chip,
+  .card-dark:hover .icon-chip,
+  .card-lift:hover .icon-chip {
+    transform: scale(1.08);
+  }
+
+  /* ---- Buttons: 13px/24px padding, 8px radius ---- */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg bg-teal px-6 py-[13px] text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg border border-line bg-white px-6 py-[13px] text-[15px] font-semibold text-ink transition-colors hover:border-teal hover:text-teal-dark;
+  }
+
+  /* ---- Headline gradient: Teal -> Gold -> Leaf, clipped to text ---- */
+  .gradient-text {
+    background-image: linear-gradient(90deg, #0f9488, #e0a930, #7fae3a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  /* Hidden state used by <Reveal> until it scrolls into view */
+  .reveal-hidden {
+    opacity: 0;
+  }
+}
+
+/* All motion respects prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .card-flat:hover,
+  .card-dark:hover,
+  .card-lift:hover {
+    transform: none;
+  }
+
+  .card-flat:hover .icon-chip,
+  .card-dark:hover .icon-chip,
+  .card-lift:hover .icon-chip {
+    transform: none;
+  }
+}
