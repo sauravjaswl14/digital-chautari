@@ -1,31 +1,32 @@
 import Card from "@/components/shared/Card";
 import IconChip, { toneAt } from "@/components/shared/IconChip";
 import Section from "@/components/shared/Section";
+import { ChartColumnIncreasing, Heart, Palette, Settings } from "lucide-react";
 
 interface Feature {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   body: string;
 }
 
 const FEATURES: Feature[] = [
   {
-    icon: "📈",
+    icon: <ChartColumnIncreasing />,
     title: "Growth-Driven",
     body: "Every campaign and build ties back to a measurable business outcome, not vanity metrics.",
   },
   {
-    icon: "🎨",
+    icon: <Palette />,
     title: "Creative-First",
     body: "Strategy and storytelling lead the work, so the technology serves a clear creative idea.",
   },
   {
-    icon: "⚙️",
+    icon: <Settings />,
     title: "Tech-Powered",
     body: "Full-stack engineering means we ship real software, not just decks and mockups.",
   },
   {
-    icon: "🤝",
+    icon: <Heart />,
     title: "Client-Centric",
     body: "We work as an embedded partner, staying close through discovery, delivery, and beyond.",
   },

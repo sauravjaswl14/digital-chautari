@@ -2,19 +2,21 @@ import Card from "@/components/shared/Card";
 import IconChip, { toneAt } from "@/components/shared/IconChip";
 import Section from "@/components/shared/Section";
 import SectionHeader from "@/components/shared/SectionHeader";
+import { ChartLine, ShoppingCart, Home, GraduationCap, Briefcase, Newspaper } from 'lucide-react';
+
 
 interface Industry {
-  icon: string;
+  icon: React.ReactNode;
   label: string;
 }
 
 const INDUSTRIES: Industry[] = [
-  { icon: "🏥", label: "Healthcare" },
-  { icon: "🛒", label: "E-Commerce" },
-  { icon: "🏠", label: "Real Estate" },
-  { icon: "🎓", label: "Education" },
-  { icon: "🧳", label: "Tourism" },
-  { icon: "📰", label: "Media" },
+  { icon: <ChartLine />, label: "Healthcare" },
+  { icon: <ShoppingCart />, label: "E-Commerce" },
+  { icon: <Home />, label: "Real Estate" },
+  { icon: <GraduationCap />, label: "Education" },
+  { icon: <Briefcase />, label: "Tourism" },
+  { icon: <Newspaper />, label: "Media" },
 ];
 
 export default function Industries() {

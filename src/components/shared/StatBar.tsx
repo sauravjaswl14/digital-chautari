@@ -4,7 +4,7 @@ import IconChip, { toneAt } from "./IconChip";
 import Reveal from "./Reveal";
 
 export interface StatItem {
-  icon: string;
+  icon: React.ReactNode;
   value: string;
   label: string;
 }

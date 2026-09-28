@@ -4,9 +4,10 @@ import IconChip, { toneAt } from "@/components/shared/IconChip";
 import Reveal from "@/components/shared/Reveal";
 import Section from "@/components/shared/Section";
 import { stagger } from "@/lib/motion";
+import { Speaker, Film, Laptop, Palette } from 'lucide-react';
 
 interface Teaser {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   body: string;
 }
@@ -19,10 +20,10 @@ const CHECKLIST: string[] = [
 ];
 
 const TEASERS: Teaser[] = [
-  { icon: "📣", title: "Digital Marketing", body: "SEO, social, and paid campaigns that convert." },
-  { icon: "🎬", title: "Content Creation", body: "Video, photo, and copy built to be shared." },
-  { icon: "💻", title: "Software Development", body: "Web and mobile products that scale." },
-  { icon: "🖌️", title: "Branding & Design", body: "Identities that people remember." },
+  { icon: <Speaker />, title: "Digital Marketing", body: "SEO, social, and paid campaigns that convert." },
+  { icon: <Film />, title: "Content Creation", body: "Video, photo, and copy built to be shared." },
+  { icon: <Laptop />, title: "Software Development", body: "Web and mobile products that scale." },
+  { icon: <Palette />, title: "Branding & Design", body: "Identities that people remember." },
 ];
 
 export default function WhoWeAre() {

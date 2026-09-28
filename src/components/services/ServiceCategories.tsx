@@ -3,9 +3,11 @@ import IconChip, { type Tone } from "@/components/shared/IconChip";
 import Reveal from "@/components/shared/Reveal";
 import Section from "@/components/shared/Section";
 import { stagger } from "@/lib/motion";
+import { Ad, Laptop, MonitorPlay } from 'lucide-react';
+
 
 interface ServiceCategory {
-  icon: string;
+  icon: React.ReactNode;
   tone: Tone;
   title: string;
   description: string;
@@ -14,7 +16,7 @@ interface ServiceCategory {
 
 const CATEGORIES: ServiceCategory[] = [
   {
-    icon: "📣",
+    icon: <Ad />,
     tone: "teal",
     title: "Digital Marketing",
     description:
@@ -22,7 +24,7 @@ const CATEGORIES: ServiceCategory[] = [
     subServices: ["SEO & SEM", "Social Media Marketing", "Paid Advertising", "Analytics & Reporting"],
   },
   {
-    icon: "🎬",
+    icon: <MonitorPlay />,
     tone: "gold",
     title: "Content Creation",
     description:
@@ -30,7 +32,7 @@ const CATEGORIES: ServiceCategory[] = [
     subServices: ["Video Production", "Photography", "Copywriting", "Brand Storytelling"],
   },
   {
-    icon: "💻",
+    icon: <Laptop />,
     tone: "mint",
     title: "Software Development",
     description:

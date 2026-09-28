@@ -1,6 +1,8 @@
 import Card from "@/components/shared/Card";
 import IconChip from "@/components/shared/IconChip";
 import Section from "@/components/shared/Section";
+import { Telescope, Goal } from 'lucide-react';
+
 
 export default function MissionVision() {
   return (
@@ -8,7 +10,7 @@ export default function MissionVision() {
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         <Card index={0} className="md:p-10">
           <IconChip tone="teal" className="mb-4">
-            🎯
+            <Goal />
           </IconChip>
           <h3 className="font-heading text-xl font-bold text-ink">Our Mission</h3>
           <p className="mt-3 text-muted">
@@ -19,7 +21,7 @@ export default function MissionVision() {
 
         <Card index={1} className="md:p-10">
           <IconChip tone="gold" className="mb-4">
-            🔭
+            <Telescope />
           </IconChip>
           <h3 className="font-heading text-xl font-bold text-ink">Our Vision</h3>
           <p className="mt-3 text-muted">

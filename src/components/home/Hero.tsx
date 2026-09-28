@@ -2,11 +2,13 @@ import Link from "next/link";
 import GradientText from "@/components/shared/GradientText";
 import PageHero from "@/components/shared/PageHero";
 import StatBar, { type StatItem } from "@/components/shared/StatBar";
+import { PackageSearch, Users, BadgePercent } from 'lucide-react';
+
 
 const STATS: StatItem[] = [
-  { icon: "📦", value: "3", label: "Products" },
-  { icon: "👥", value: "6+", label: "Team Members" },
-  { icon: "💯", value: "100%", label: "Commitment" },
+  { icon: <PackageSearch />, value: "3", label: "Products" },
+  { icon: <Users />, value: "6+", label: "Team Members" },
+  { icon: <BadgePercent />, value: "100%", label: "Commitment" },
 ];
 
 export default function Hero() {
