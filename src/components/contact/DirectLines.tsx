@@ -31,7 +31,7 @@ export default function DirectLines() {
             <h3 className="font-heading text-base font-bold text-ink">{dept.name}</h3>
             <a
               href={`mailto:${dept.email}`}
-              className="mt-1 block break-words text-sm font-medium text-teal hover:text-teal-dark"
+              className="mt-1 block wrap-break-word text-sm font-medium text-teal hover:text-teal-dark"
             >
               {dept.email}
             </a>

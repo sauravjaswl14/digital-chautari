@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-content items-center justify-between px-[22px] py-3 md:grid md:grid-cols-[1fr_auto_1fr] md:px-10">
+      <div className="mx-auto flex w-full max-w-content items-center justify-between px-5.5 py-3 md:grid md:grid-cols-[1fr_auto_1fr] md:px-10">
         <Logo showTagline className="md:justify-self-start" />
 
         <nav aria-label="Main" className="hidden items-center gap-8 md:flex">
@@ -70,7 +70,7 @@ export default function Header() {
       {open && (
         <div
           id="mobile-nav"
-          className="animate-fade-slide-in border-t border-line bg-white px-[22px] py-4 md:hidden"
+          className="animate-fade-slide-in border-t border-line bg-white px-5.5 py-4 md:hidden"
         >
           <nav aria-label="Mobile" className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (

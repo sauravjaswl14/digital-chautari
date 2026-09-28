@@ -68,7 +68,7 @@ export default function BlogTeaser() {
             >
               {post.emoji}
             </div>
-            <div className="p-[22px]">
+            <div className="p-5.5">
               <span className="text-xs font-semibold text-teal">{post.tag}</span>
               <h3 className="mt-2 font-heading text-base font-bold text-ink">{post.title}</h3>
               <p className="mt-2 text-sm text-muted">{post.excerpt}</p>

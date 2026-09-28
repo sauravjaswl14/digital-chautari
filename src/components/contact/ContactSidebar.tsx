@@ -37,14 +37,14 @@ export default function ContactSidebar() {
         </div>
       </Reveal>
 
-      <Reveal delay={stagger(1)} className="card-dark p-[22px]">
+      <Reveal delay={stagger(1)} className="card-dark p-5.5">
         <p className="font-heading text-base font-bold">Need quick answers?</p>
         <Link href="/faq" className="mt-2 inline-block text-sm font-semibold text-gold hover:underline">
           Visit FAQ page →
         </Link>
       </Reveal>
 
-      <Reveal delay={stagger(2)} className="card-flat p-[22px]">
+      <Reveal delay={stagger(2)} className="card-flat p-5.5">
         <h3 className="font-heading text-sm font-bold text-ink">Response Time</h3>
         <ul className="mt-4 flex flex-col gap-3">
           {RESPONSE_TIMES.map((r) => (

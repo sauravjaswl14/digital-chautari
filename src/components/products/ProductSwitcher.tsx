@@ -96,13 +96,11 @@ export default function ProductSwitcher() {
         ))}
       </Reveal>
 
-      {/* Section switch: `key` re-mounts the panel on every tab change, which
-          replays the fade+slide-in. (Plain class, not <Reveal>, so there's no
-          hidden first frame and no flicker when switching.) */}
+
       <div
         key={active}
         aria-live="polite"
-        className="animate-fade-slide-in card-flat mt-8 grid grid-cols-1 gap-10 p-[22px] md:grid-cols-2 md:items-center md:p-10"
+        className="animate-fade-slide-in card-flat mt-8 grid grid-cols-1 gap-10 p-5.5 md:grid-cols-2 md:items-center md:p-10"
       >
         <div>
           <span className="text-xs font-semibold text-teal">{product.category}</span>
