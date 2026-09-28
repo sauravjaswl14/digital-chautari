@@ -31,7 +31,7 @@ export default function ContactPage() {
 
       <Section>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.4fr_1fr]">
-          <Reveal className="card-flat p-[22px] md:p-8">
+          <Reveal className="card-flat p-5.5 md:p-8">
             <h2 className="mb-6 font-heading text-xl font-bold text-ink">Send us a message</h2>
             <ContactForm />
           </Reveal>

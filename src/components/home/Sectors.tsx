@@ -2,19 +2,20 @@ import Card from "@/components/shared/Card";
 import IconChip, { toneAt } from "@/components/shared/IconChip";
 import Section from "@/components/shared/Section";
 import SectionHeader from "@/components/shared/SectionHeader";
+import { Briefcase, GraduationCap, Home, Hospital, Newspaper, ShoppingCart } from "lucide-react";
 
 interface Sector {
-  icon: string;
+  icon: React.ReactNode;
   label: string;
 }
 
 const SECTORS: Sector[] = [
-  { icon: "🏥", label: "Healthcare" },
-  { icon: "🛒", label: "E-Commerce" },
-  { icon: "🏠", label: "Real Estate" },
-  { icon: "🎓", label: "Education" },
-  { icon: "🧳", label: "Tourism & Hospitality" },
-  { icon: "📰", label: "Media & Publishing" },
+  { icon: <Hospital />, label: "Healthcare" },
+  { icon: <ShoppingCart />, label: "E-Commerce" },
+  { icon: <Home />, label: "Real Estate" },
+  { icon: <GraduationCap />, label: "Education" },
+  { icon: <Briefcase />, label: "Tourism & Hospitality" },
+  { icon: <Newspaper />, label: "Media & Publishing" },
 ];
 
 export default function Sectors() {

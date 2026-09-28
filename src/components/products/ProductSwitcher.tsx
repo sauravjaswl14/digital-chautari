@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import IconChip, { type Tone } from "@/components/shared/IconChip";
 import Reveal from "@/components/shared/Reveal";
 import Section from "@/components/shared/Section";
 import { cn } from "@/lib/cn";
+import { FileVideoCamera, Sprout, Stethoscope } from "lucide-react";
 
 interface Product {
   tab: string;
@@ -15,7 +16,7 @@ interface Product {
   tags: string[];
   cta: string;
   preview: {
-    icon: string;
+    icon: ReactNode;
     tone: Tone;
     label: string;
     lines: string[];
@@ -32,7 +33,7 @@ const PRODUCTS: Product[] = [
     tags: ["Brand Strategy", "Paid Media", "Social Content"],
     cta: "Work with Eco Creative →",
     preview: {
-      icon: "🌱",
+      icon: <Sprout />,
       tone: "mint",
       label: "Campaign Dashboard",
       lines: ["Reach: 240,000", "Engagement rate: 6.8%", "Active campaigns: 5"],
@@ -47,7 +48,7 @@ const PRODUCTS: Product[] = [
     tags: ["Video Production", "Photography", "Social Editing"],
     cta: "Book the Studio →",
     preview: {
-      icon: "🎥",
+      icon: <FileVideoCamera />,
       tone: "gold",
       label: "Shoot Schedule",
       lines: ["This week: 4 shoots", "Turnaround: 48 hrs", "Formats: Reels, YouTube, Print"],
@@ -62,7 +63,7 @@ const PRODUCTS: Product[] = [
     tags: ["Patient Booking", "Clinic Dashboard", "Home Visits"],
     cta: "Explore Physio@Home →",
     preview: {
-      icon: "🩺",
+      icon: <Stethoscope />,
       tone: "teal",
       label: "Booking Overview",
       lines: ["Today's visits: 12", "Avg. response time: 9 min", "Partner clinics: 6"],

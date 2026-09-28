@@ -4,9 +4,10 @@ import type { Tone } from "@/components/shared/IconChip";
 import Section from "@/components/shared/Section";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { cn } from "@/lib/cn";
+import { FilmIcon, Megaphone, Stethoscope } from "lucide-react";
 
 interface Post {
-  emoji: string;
+  emoji: React.ReactNode;
   tone: Tone;
   tag: string;
   date: string;
@@ -25,7 +26,7 @@ const BLOCK_CLASS: Record<Tone, string> = {
 
 const POSTS: Post[] = [
   {
-    emoji: "🔎",
+    emoji: <Megaphone />,
     tone: "teal",
     tag: "Marketing",
     date: "Sep 12, 2026",
@@ -34,7 +35,7 @@ const POSTS: Post[] = [
     excerpt: "How healthcare providers in Kathmandu are winning patients through search.",
   },
   {
-    emoji: "🎬",
+    emoji: <FilmIcon />,
     tone: "gold",
     tag: "Content",
     date: "Sep 2, 2026",
@@ -43,7 +44,7 @@ const POSTS: Post[] = [
     excerpt: "A look at how our studio plans and shoots a month of social content in a day.",
   },
   {
-    emoji: "🩺",
+    emoji: <Stethoscope />,
     tone: "lilac",
     tag: "Health-Tech",
     date: "Aug 24, 2026",

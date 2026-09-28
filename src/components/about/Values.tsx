@@ -2,18 +2,19 @@ import Card from "@/components/shared/Card";
 import IconChip, { toneAt } from "@/components/shared/IconChip";
 import Section from "@/components/shared/Section";
 import SectionHeader from "@/components/shared/SectionHeader";
+import { Handshake, Heart, Lightbulb, Star } from "lucide-react";
 
 interface Value {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   body: string;
 }
 
 const VALUES: Value[] = [
-  { icon: "❤️", title: "Passion", body: "We only take on work we'd be proud to put our name on." },
-  { icon: "💡", title: "Creativity", body: "The best solution is rarely the obvious one — we look for it anyway." },
-  { icon: "⭐", title: "Excellence", body: "Good enough isn't a standard we work to." },
-  { icon: "🤝", title: "Collaboration", body: "Clients are partners in the process, not recipients of it." },
+  { icon: <Heart />, title: "Passion", body: "We only take on work we'd be proud to put our name on." },
+  { icon: <Lightbulb />, title: "Creativity", body: "The best solution is rarely the obvious one — we look for it anyway." },
+  { icon: <Star />, title: "Excellence", body: "Good enough isn't a standard we work to." },
+  { icon: <Handshake />, title: "Collaboration", body: "Clients are partners in the process, not recipients of it." },
 ];
 
 export default function Values() {

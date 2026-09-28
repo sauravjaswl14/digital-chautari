@@ -3,9 +3,10 @@ import Card from "@/components/shared/Card";
 import IconChip, { type Tone } from "@/components/shared/IconChip";
 import Section from "@/components/shared/Section";
 import SectionHeader from "@/components/shared/SectionHeader";
+import { Film, Leaf, Stethoscope } from "lucide-react";
 
 interface ProductTeaser {
-  icon: string;
+  icon: React.ReactNode;
   tone: Tone;
   category: string;
   title: string;
@@ -14,21 +15,21 @@ interface ProductTeaser {
 
 const PRODUCTS: ProductTeaser[] = [
   {
-    icon: "🌱",
+    icon: <Leaf />,
     tone: "mint",
     category: "Marketing Agency",
     title: "Eco Creative Marketing Agency",
     body: "Sustainability-minded brand and growth campaigns for businesses across Nepal.",
   },
   {
-    icon: "🎥",
+    icon: <Film />,
     tone: "gold",
     category: "Content Studio",
     title: "One Content Creation Studio",
     body: "In-house video, photo, and social content production for fast-moving brands.",
   },
   {
-    icon: "🩺",
+    icon: <Stethoscope />,
     tone: "teal",
     category: "Health-Tech",
     title: "Physio@Home",

@@ -1,19 +1,20 @@
 import Card from "@/components/shared/Card";
 import IconChip, { toneAt } from "@/components/shared/IconChip";
 import Section from "@/components/shared/Section";
+import { Mail, MapPin, Phone, Clock } from "lucide-react";
 
 interface InfoItem {
-  icon: string;
+  icon: React.ReactNode;
   label: string;
   value: string;
   href?: string;
 }
 
 const INFO: InfoItem[] = [
-  { icon: "📍", label: "Address", value: "Kathmandu, Nepal" },
-  { icon: "✉️", label: "Email", value: "hello@digitalchautari.com", href: "mailto:hello@digitalchautari.com" },
-  { icon: "📞", label: "Phone", value: "+977 1-234-5678", href: "tel:+97712345678" },
-  { icon: "🕐", label: "Business Hours", value: "Sun–Fri, 10:00 AM – 6:00 PM" },
+  { icon: <MapPin />, label: "Address", value: "Kathmandu, Nepal" },
+  { icon: <Mail />, label: "Email", value: "hello@digitalchautari.com", href: "mailto:hello@digitalchautari.com" },
+  { icon: <Phone />, label: "Phone", value: "+977 1-234-5678", href: "tel:+97712345678" },
+  { icon: <Clock />, label: "Business Hours", value: "Sun–Fri, 10:00 AM – 6:00 PM" },
 ];
 
 export default function ContactInfoCards() {

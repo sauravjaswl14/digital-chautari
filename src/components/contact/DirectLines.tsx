@@ -2,18 +2,19 @@ import Card from "@/components/shared/Card";
 import IconChip, { toneAt } from "@/components/shared/IconChip";
 import Section from "@/components/shared/Section";
 import SectionHeader from "@/components/shared/SectionHeader";
+import { Briefcase, Code, Film, Megaphone } from "lucide-react";
 
 interface Department {
-  icon: string;
+  icon: React.ReactNode;
   name: string;
   email: string;
 }
 
 const DEPARTMENTS: Department[] = [
-  { icon: "📣", name: "Marketing", email: "marketing@digitalchautari.com" },
-  { icon: "🎬", name: "Content Studio", email: "studio@digitalchautari.com" },
-  { icon: "💻", name: "Software Dev", email: "dev@digitalchautari.com" },
-  { icon: "📈", name: "Business Dev", email: "partnerships@digitalchautari.com" },
+  { icon: <Megaphone />, name: "Marketing", email: "marketing@digitalchautari.com" },
+  { icon: <Film />, name: "Content Studio", email: "studio@digitalchautari.com" },
+  { icon: <Code />, name: "Software Dev", email: "dev@digitalchautari.com" },
+  { icon: <Briefcase />, name: "Business Dev", email: "partnerships@digitalchautari.com" },
 ];
 
 export default function DirectLines() {
